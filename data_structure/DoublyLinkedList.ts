@@ -103,4 +103,14 @@ export class DoublyLinkedlist<K, V> {
     }
     return result;
   }
+
+  keys(): K[] {
+    const result: K[] = [];
+    let current = this.head.next!;
+    while (current !== this.tail) {
+      result.push(current.key);
+      current = current.next!;
+    }
+    return result;
+  }
 }
