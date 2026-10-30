@@ -5,7 +5,7 @@ export class LRUCache<K, V> {
   private readonly cachedList = new DoublyLinkedlist<K, V>();
 
   constructor(private readonly capacity: number) {
-    if (!Number.isInteger(capacity) || capacity < 0) {
+    if (!Number.isInteger(capacity) || capacity < 1) {
       throw new RangeError(
         `Capacity must be a positive integer, got ${capacity}`,
       );
