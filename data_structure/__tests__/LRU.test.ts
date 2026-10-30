@@ -2,6 +2,7 @@ import { LRUCache } from "../LRU";
 
 describe("LRUCache", () => {
   it("throws on invalid capacity", () => {
+    expect(() => new LRUCache(0)).toThrow(RangeError);
     expect(() => new LRUCache(-1)).toThrow(RangeError);
     expect(() => new LRUCache(1.5)).toThrow(RangeError);
     expect(() => new LRUCache(NaN)).toThrow(RangeError);
